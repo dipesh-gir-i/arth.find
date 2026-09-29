@@ -1,7 +1,7 @@
 var YOUTUBE_ID="";/* paste the video ID here, e.g. dQw4w9WgXcQ */
 var T = [
   ["Yash Anand", "images/yash-anand.jpg", "https://www.linkedin.com/in/yashanand-574677371/"],
-  ["Kazima Fatima", "images/kazima-fatima.jpg", "https://www.linkedin.com/in/kazima-fatima-754614368/"],
+  ["Kazima Fatima", "images/kazima-fatima.png", "https://www.linkedin.com/in/kazima-fatima-754614368/"],
   ["Gargee Kakaty", "images/gargee-kakaty.png", "https://www.linkedin.com/in/gargee-kakaty-b20124323/"],
   ["Dipesh Giri", "images/dipesh-giri.png", "https://www.linkedin.com/in/dipesh-giri-26188b323/"],
   ["Rajuram D", "images/rajuram-d.jpg", "https://www.linkedin.com/in/rajuram14/"],

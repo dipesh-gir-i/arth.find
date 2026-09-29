@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arth.Find – context-aware word meanings for PDF readers</title>
+<link rel="icon" href="images/icon-source.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icon16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/icon32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/icon48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="images/icon128.png" sizes="128x128" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
+  <title>Arth.Find logo</title>
+  <rect x="0" y="0" width="128" height="128" rx="24" fill="#0a0a0a"/>
+  <svg x="14" y="14" width="100" height="100"
+       viewBox="-20 -20 851.34 566.99" preserveAspectRatio="xMidYMid meet">
+    <g transform="translate(-60.101763,581.986566) scale(0.1,-0.1)" fill="#ffffff" stroke="none">
+      <path d="M2402 5808 c-20 -20 -14 -32 35 -73 26 -22 124 -114 216 -205 93 -91
+176 -168 186 -171 9 -4 459 -7 1000 -8 783 0 986 -3 993 -13 4 -7 8 -992 8
+-2188 l1 -2175 173 -177 c96 -97 186 -193 201 -212 15 -20 36 -36 46 -36 18 0
+19 59 21 2398 l3 2397 1465 5 1465 5 80 65 c44 36 139 119 211 185 71 66 148
+135 170 152 82 67 337 62 -3130 63 -2447 0 -3134 -2 -3144 -12z"/>
+      <path d="M3265 4478 c-27 -24 -106 -92 -175 -153 -69 -61 -152 -133 -185 -160
+-70 -59 -75 -64 -68 -82 4 -9 30 -13 98 -13 51 0 117 -5 146 -10 30 -6 84 -15
+121 -19 146 -19 354 -129 480 -254 76 -74 187 -239 218 -322 12 -33 27 -69 33
+-80 11 -22 32 -134 42 -230 12 -108 -35 -356 -81 -430 -6 -11 -15 -30 -19 -43
+-20 -69 -160 -246 -257 -328 -284 -237 -593 -339 -973 -320 -194 9 -399 52
+-530 111 -120 55 -144 65 -149 65 -9 0 -188 105 -269 158 -101 66 -142 98
+-262 206 -55 50 -110 99 -123 111 -13 11 -54 56 -90 100 -37 44 -77 91 -89
+104 -61 64 -304 404 -365 511 -10 19 -30 53 -43 75 -14 22 -29 51 -35 65 -18
+41 -60 90 -77 90 -12 0 -14 -9 -10 -42 11 -107 68 -320 143 -543 45 -132 165
+-371 252 -499 130 -194 384 -474 498 -550 21 -14 66 -45 99 -69 196 -141 442
+-256 685 -317 208 -53 218 -54 450 -54 210 0 233 2 345 28 65 15 126 31 135
+35 8 5 33 12 55 16 22 4 59 15 82 26 23 10 46 19 51 19 13 0 225 109 275 141
+93 59 228 169 301 243 149 153 288 363 342 516 9 25 22 61 29 80 32 88 56 184
+71 290 44 307 -52 720 -224 963 -103 146 -269 323 -367 392 -159 111 -257 165
+-326 180 -19 4 -46 14 -61 21 -15 8 -49 14 -75 14 -42 0 -54 -6 -98 -42z"/>
+      <path d="M5721 4036 c-10 -11 -15 -77 -19 -229 -4 -191 -3 -214 12 -226 14
+-12 168 -14 969 -15 554 -1 960 2 972 8 22 10 82 64 255 231 63 61 142 134
+174 162 48 42 57 55 47 66 -9 12 -194 15 -1204 16 -1065 2 -1195 0 -1206 -13z"/>
+    </g>
+  </svg>
+</svg>Arth.Find</a>
+<nav aria-label="Main">
+<a href="#/">Home</a><a href="#/faq">FAQs</a><a href="#/privacy">Privacy policy</a><a href="#/docs">Documentation</a><a href="#/team">Team</a>
+</nav></div></header>
+<main>
+
+<!-- HOME -->
+<div class="page wrap" id="home">
+<div class="hero">
+<div>
+<h1>The right meaning depends on where you find the word.</h1>
+<p>Arth.Find is an AI-powered Chrome extension for PDF and e-book readers. Highlight a word, phrase or sentence and get its meaning in the context of what you are reading, right on the page, with no new tabs.</p>
+<div class="row"><span class="btn" role="note">Coming soon to the Chrome Web Store</span></div>
+</div>
+<div class="demo" aria-label="Example of a contextual lookup">
+<p style="margin:0">You are reading about technology and startups. You highlight <mark>Silicon</mark>.</p>
+<div class="ans"><b>A search engine says</b>Silicon is a chemical element with the symbol Si and atomic number 14, best known as the foundational semiconductor material powering modern electronics. Correct, but not what your book means.</div>
+<div class="ans good"><b>Arth.Find says</b>Silicon refers to the region's name, which is derived from the silicon-based technologies that were developed there.</div>
+</div>
+</div>
+
+<section class="blk" aria-labelledby="f">
+<h2 id="f">What you get</h2>
+<div class="grid">
+<div><h3>Meaning in context</h3><p>Explanations for words, phrases and whole sentences, based on the text around your selection.</p></div>
+<div><h3>Stay on the page</h3><p>Meanings appear right where you are reading. No tab switching, no broken concentration.</p></div>
+<div><h3>Calming themes</h3><p>Reading themes with colours chosen with human psychology in mind, instead of a harsh white or black page.</p></div>
+<div><h3>Nature wallpapers</h3><p>Built-in calming backgrounds such as forests, water and light through leaves.</p></div>
+<div><h3>Your own backgrounds</h3><p>Upload a favourite photo or painting to make the reader feel like yours.</p></div>
+<div><h3>Built-in PDF reader</h3><p>Open a local PDF or a PDF URL in the bundled PDF.js viewer, and select any rendered text to look it up.</p></div>
+<div><h3>Bring your own key</h3><p>Prefer your own Gemini, OpenAI or NVIDIA NIM key? Use it. It is encrypted on the server and never sent back to the extension.</p></div>
+</div>
+</section>
+
+<section class="blk" aria-labelledby="g">
+<h2 id="g">User guide</h2>
+<p>Watch how to open the PDF reader, highlight text and choose your theme and wallpaper.</p>
+<div class="video" id="video"><span>YouTube user guide goes here.<br>Set <code>YOUTUBE_ID</code> in the script at the bottom of this file.</span></div>
+</section>
+</div>
+
+<!-- FAQ -->
+<div class="page wrap" id="faq">
+<h1>FAQs</h1>
+<p>Answers to common questions.</p>
+<details><summary>Question 1</summary><p>Answer 1</p></details>
+<details><summary>Question 2</summary><p>Answer 2</p></details>
+<details><summary>Question 3</summary><p>Answer 3</p></details>
+<details><summary>Question 4</summary><p>Answer 4</p></details>
+<details><summary>Question 5</summary><p>Answer 5</p></details>
+<details><summary>Question 6</summary><p>Answer 6</p></details>
+<div class="todo"><strong>Placeholders:</strong> replace Question 1 to 6 and Answer 1 to 6 with the real FAQs. Duplicate a <code>&lt;details&gt;</code> block to add more.</div>
+</div>
+
+<!-- PRIVACY -->
+<div class="page wrap" id="privacy">
+<article class="legal">
+<h1>Privacy Policy for Arth.Find</h1>
+<p><strong>Last Updated:</strong> September 29, 2026</p>
+<p>Welcome to Arth.Find ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, process, and protect your information when you use the Arth.Find Chrome Extension and its associated backend service.</p>
+<p>This policy is designed to comply with global privacy standards, the Google Chrome Web Store Developer Terms, and India's Digital Personal Data Protection (DPDP) Act.</p>
+<h3>1. Data Collection &amp; Processing Boundaries</h3>
+<p>Arth.Find operates on a "Privacy by Design" model. We only process data absolutely required to deliver context-aware word explanations.</p>
+<ul>
+<li><strong>Text Selection &amp; Context:</strong> When you highlight text, the extension sends the selected word/phrase and the immediate surrounding context to our backend (<code>POST /define</code>) to compute the definition. This data is processed transiently in memory and is <strong>never permanently logged, stored, or indexed</strong> on our backend servers.</li>
+<li><strong>API Keys (BYOK Mode):</strong> If you choose to provide your own LLM provider API key (Google Gemini, OpenAI, or NVIDIA NIM), this key is sent once via <code>POST /credentials</code>. It is instantly encrypted on the server, and only an opaque, secure reference token is stored. The raw key is never returned to the extension and is never stored in plaintext.</li>
+<li><strong>Local Data Storage:</strong> The extension uses Chrome's local storage API to remember your theme configurations, background wallpaper choices, and local session preferences. This data stays entirely on your physical machine.</li>
+</ul>
+<h3>2. Encryption and Security Architecture</h3>
+<p>We employ industry-standard cryptographic practices to ensure your data remains safe:</p>
+<ul>
+<li><strong>In-Transit Protection:</strong> All communications between the Arth.Find extension client and the backend server are encrypted using Secure Sockets Layer / Transport Layer Security (SSL/TLS) HTTPS protocols.</li>
+<li><strong>At-Rest API Key Encryption:</strong> In Bring Your Own Key (BYOK) mode, credentials are fully encrypted using an isolated server-side <code>CREDENTIAL_ENCRYPTION_KEY</code>. Plaintext keys are never visible to server operators or database logs.</li>
+</ul>
+<h3>3. Data Storage, Retainment, and Third-Party API Sharing</h3>
+<ul>
+<li><strong>No Selling or Monetization:</strong> We strictly do not sell, rent, trade, or weaponize user data for marketing, profiling, or credit scoring.</li>
+<li><strong>Third-Party LLM Processing:</strong> To generate definitions, text context is transmitted securely to the LLM provider configured by the user or the application fallback environment (Google Gemini, OpenAI, or NVIDIA NIM). These entities process data in accordance with their respective API privacy terms, which generally prohibit using API data to train models.</li>
+</ul>
+<h3>4. Compliance with India's DPDP Act</h3>
+<p>As an application developed and managed under the framework of Indian laws, we strictly adhere to the <strong>Digital Personal Data Protection (DPDP) Act</strong>:</p>
+<ul>
+<li><strong>Data Minimization:</strong> We only request processing privileges for the exact text you explicitly highlight.</li>
+<li><strong>Explicit Consent:</strong> By installing the extension and highlighting text, you provide clear, affirmative consent for transient processing of that text snippet.</li>
+<li><strong>Right to Erasure &amp; Access (BYOK Data):</strong> Since we do not maintain user accounts or persistent history logs, we hold no personal data profile on you. If you use BYOK mode and wish to revoke or erase your encrypted credential token, you can purge your local extension storage or contact us to invalidate the token reference on the backend.</li>
+<li><strong>Data Principal Grievances:</strong> For queries, complaints, or exercising your rights under the DPDP Act, you can contact our designated Data Principal Grievance support through our official support channel: <span class="todo" style="display:inline;padding:.1rem .5rem;margin:0">[contact email or link to be added]</span></li>
+</ul>
+<h3>5. Changes to This Policy</h3>
+<p>We reserve the right to update this Privacy Policy to reflect extension updates or legal revisions. Continued use of the extension after updates constitutes acceptance of the modified policy.</p>
+</article>
+</div>
+
+<!-- DOCS -->
+<div class="page wrap" id="docs">
+<div class="doc">
+<h1>Technical documentation</h1>
+<p>A deep dive into how Arth.Find works, written from the project's internal documentation.</p>
+<h2>Purpose and scope</h2>
+<p>Arth.Find lets a reader select a word or short phrase in a PDF or e-book and see its meaning as it applies to the surrounding text, without leaving the page or opening a new tab. The goal is to cut the interruption of dictionary lookups so readers move faster and finish more. The SRS lists audiobooks, annotation tools, multi-language translation and full offline LLM inference as out of scope for the MVP, and it assumes the PDF text is selectable (not a scanned image).</p>
+<h2>Architecture</h2>
+<p>Two parts work together:</p>
+<ul>
+<li><strong>Extension</strong> (Chromium browsers, Manifest V3): selection, context extraction, the popup, the PDF reader, local caching and saving.</li>
+<li><strong>Backend</strong> (Python, FastAPI): validates requests, builds the LLM prompt and calls the provider. It is the only place provider keys are used.</li>
+</ul>
+<p>The SRS also asks for core logic to be kept separate from browser-specific code so it can be ported later, and for a modular codebase (PDF parsing, context extraction, API integration, UI rendering).</p>
+<h2>Lookup flow</h2>
+<ol>
+<li>You highlight text on a webpage or in the Arth.Find PDF reader and click <strong>Explain</strong>.</li>
+<li>The extension collects the selection (<code>word</code>) and the nearby text (<code>context</code>) and sends <code>POST /define</code> to the backend.</li>
+<li>The backend validates the request, sends the word and context to the configured LLM with its instructions, and returns the result.</li>
+<li>The popup shows the returned <code>meaning</code> on the page. <strong>Save</strong> stores the lookup locally in Chrome storage.</li>
+</ol>
+<p>A successful <code>/define</code> response contains <code>status</code>, <code>meaning</code>, <code>tone</code>, <code>synonym</code>, <code>example</code> and <code>simplified_passage</code>. If the definition service is unavailable, the response says so; the SRS asks for a friendly retry message instead of a failure.</p>
+<h2>PDF reader</h2>
+<p>Chrome's built-in PDF viewer is isolated from extensions, so Arth.Find bundles its own reader built on PDF.js. Open it from the popup, choose a local PDF (or enter a PDF URL), and select any rendered text to look it up.</p>
+<h2>Backend</h2>
+<p>Endpoints: <code>POST /define</code>, <code>POST /credentials</code> and <code>GET /health</code>, which returns <code>"status":"healthy"</code>.</p>
+<ul>
+<li><code>backend/app.py</code>: the FastAPI app and routes.</li>
+<li><code>backend/config.py</code>: resolves provider credentials and deployment settings.</li>
+<li><code>backend/schemas.py</code>: validates request and response data.</li>
+<li><code>backend/prompts.py</code>: the LLM instructions.</li>
+<li><code>backend/services/llm_service.py</code>: calls the configured provider.</li>
+<li><code>backend/exceptions.py</code>: error responses.</li>
+</ul>
+<p>Dependencies: FastAPI, Uvicorn, Pydantic, an OpenAI-compatible client, HTTPX, <code>cryptography</code> (AES-GCM) and python-dotenv, with pytest for tests.</p>
+<h2>LLM providers</h2>
+<p>Google Gemini (through its OpenAI-compatible endpoint, overridable with <code>GEMINI_BASE_URL</code>), OpenAI and NVIDIA NIM (<code>NVIDIA_BASE_URL</code>) are supported. Set the key and model in <code>backend/.env</code> or in deployment environment variables:</p>
+<pre><code>GEMINI_API_KEY=...   # or OPENAI_API_KEY / NVIDIA_API_KEY
+LLM_MODEL=...</code></pre>
+<h2>Bring Your Own Key and encryption</h2>
+<ol>
+<li>In the popup, choose a provider, enter your key and optionally a model, then save.</li>
+<li>The extension sends the key once to <code>POST /credentials</code>.</li>
+<li>The backend encrypts it with AES-GCM using <code>CREDENTIAL_ENCRYPTION_KEY</code> (a 32-byte URL-safe base64 value) and returns an opaque credential reference.</li>
+<li>The extension keeps that reference encrypted in <code>chrome.storage.local</code> (as <code>iv</code> plus <code>ciphertext</code>). The provider key is not stored in the extension after registration.</li>
+<li>Later <code>/define</code> calls carry only the reference.</li>
+</ol>
+<h2>Extension files</h2>
+<ul>
+<li><code>manifest.json</code>: extension configuration.</li>
+<li><code>popup.html</code> and <code>popup.js</code>: settings page and saving settings locally.</li>
+<li><code>content.js</code>: webpage selection, context extraction, lookup, caching and Save.</li>
+<li><code>pdf-viewer.html</code> and <code>pdf-reader.js</code>: the PDF reader, text selection, lookup and Save.</li>
+<li><code>crypto.js</code>: encryption helpers and the <code>BACKEND_ENDPOINT</code> setting.</li>
+<li><code>lib/pdfjs/</code>: bundled PDF.js.</li>
+</ul>
+<h2>Run it locally</h2>
+<pre><code>python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+python -m pip install -r backend/requirements.txt
+python -m uvicorn backend.app:app --reload --host 127.0.0.1 --port 8000
+python -m pytest backend/tests -q</code></pre>
+<p>Test the endpoint:</p>
+<pre><code>curl -X POST http://127.0.0.1:8000/define \
+  -H "Content-Type: application/json" \
+  -d '{"word":"bank","context":"She sat beside the bank of the river."}'</code></pre>
+<p>To load the extension, open <code>chrome://extensions</code>, turn on Developer mode, choose <strong>Load unpacked</strong> and select the <code>extension</code> folder. The extension calls the URL in <code>BACKEND_ENDPOINT</code> in <code>extension/crypto.js</code> (default <code>http://127.0.0.1:8000/define</code>); change it after deploying your backend, and use HTTPS in production.</p>
+<h2>Design targets from the SRS</h2>
+<p>These are the project's stated requirements, not a guarantee of current behaviour.</p>
+<ul>
+<li>Definition popup within about 3 seconds under normal conditions (95th percentile), and no more than 500 ms added to PDF page load.</li>
+<li>Word and context lookups cached locally per document session to avoid repeated API calls.</li>
+<li>All communication over HTTPS/TLS, API keys never in client code, and no document content stored on the server beyond the single API call.</li>
+<li>Free for students in the MVP, with feedback as the only thing asked of users.</li>
+<li>A draft feature for local reading progress (pages read and time per session).</li>
+</ul>
+</div>
+</div>
+
+<!-- TEAM -->
+<div class="page wrap" id="team">
+<h1>Meet the team</h1>
+<p>The people behind Arth.Find.</p>
+<div class="team" id="teamGrid"></div>
+</div>
+
+</main>
+<footer><div class="wrap">
+<span>Arth.Find. "Arth" (अर्थ) is the Hindi word for meaning.</span>
+
+</div></footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>

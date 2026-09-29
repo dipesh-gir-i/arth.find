@@ -23,7 +23,14 @@ document.getElementById("teamGrid").innerHTML = T.map(function(t) {
     '</div>';
 }).join("");
 if(YOUTUBE_ID){document.getElementById("video").innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+YOUTUBE_ID+'" title="Arth.Find user guide" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>'}
-var R={"":"home","faq":"faq","privacy":"privacy","docs":"docs","team":"team"};
+var R={
+    "":"home",
+    "faq":"faq",
+    "privacy":"privacy",
+    "docs":"docs",
+    "team":"team",
+    "feedback":"feedback"
+};
 function route(){var k=location.hash.replace(/^#\/?/,"");var id=R[k]||"home";
 document.querySelectorAll(".page").forEach(function(p){p.classList.toggle("on",p.id===id)});
 document.querySelectorAll("nav a").forEach(function(a){var on=(a.getAttribute("href").replace(/^#\/?/,"")||"")===(id==="home"?"":id);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});

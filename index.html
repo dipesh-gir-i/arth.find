@@ -109,38 +109,103 @@
 <!-- PRIVACY -->
 <div class="page wrap" id="privacy">
 <article class="legal">
-<h1>Privacy Policy for Arth.Find</h1>
-<p><strong>Last Updated:</strong> September 29, 2026</p>
-<p>Welcome to Arth.Find ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, process, and protect your information when you use the Arth.Find Chrome Extension and its associated backend service.</p>
-<p>This policy is designed to comply with global privacy standards, the Google Chrome Web Store Developer Terms, and India's Digital Personal Data Protection (DPDP) Act.</p>
-<h3>1. Data Collection &amp; Processing Boundaries</h3>
-<p>Arth.Find operates on a "Privacy by Design" model. We only process data absolutely required to deliver context-aware word explanations.</p>
+<h1>Privacy Policy</h1>
+<p><strong>Last Updated:</strong> September 30, 2026</p>
+<p>Arth.Find ("Arth.Find", "we," "our," or "us") respects your privacy and is committed to handling your information responsibly. This Privacy Policy explains what information Arth.Find processes, why it is processed, how it is protected, and the choices available to you when using the Arth.Find Chrome Extension and related services.</p>
+<p>By using Arth.Find, you acknowledge the practices described in this Privacy Policy.</p>
+
+<h3>1. About Arth.Find</h3>
+<p>Arth.Find is a context-aware reading tool that helps users understand words, phrases, and sentences based on the surrounding text in a document.</p>
+<p>The service is designed around data minimization. We aim to process only the information necessary to provide the requested explanation and to avoid collecting information that is not needed for the service.</p>
+
+<h3>2. Information We Process</h3>
+<h4>Text You Select</h4>
+<p>When you select a word, phrase, or sentence using Arth.Find, the selected text and relevant surrounding context may be sent to our server so that an explanation can be generated.</p>
+<p>We do not require access to your entire document in order to provide an explanation. The service is designed to process the selected text together with the context necessary to understand its meaning.</p>
+
+<h4>Information You Provide for AI Services</h4>
+<p>Arth.Find may allow you to connect your own AI provider account or API key, including supported providers such as Google Gemini, OpenAI, or NVIDIA NIM.</p>
+<p>If you choose to use this feature, the credentials you provide are transmitted securely and protected using encryption. Arth.Find does not display your original credential back to you after it has been securely stored.</p>
+<p>You are responsible for maintaining the security of your AI provider account and for complying with that provider's terms and policies.</p>
+
+<h4>Preferences and Settings</h4>
+<p>Arth.Find may store settings such as reading themes, background preferences, and other interface preferences locally on your device.</p>
+<p>These settings are used to provide a more personalized reading experience.</p>
+
+<h4>Account Information</h4>
+<p>Arth.Find does not currently require users to create an account to use the extension.</p>
+
+<h3>3. How We Use Information</h3>
+<p>Information processed by Arth.Find is used to:</p>
 <ul>
-<li><strong>Text Selection &amp; Context:</strong> When you highlight text, the extension sends the selected word/phrase and the immediate surrounding context to our backend (<code>POST /define</code>) to compute the definition. This data is processed transiently in memory and is <strong>never permanently logged, stored, or indexed</strong> on our backend servers.</li>
-<li><strong>API Keys (BYOK Mode):</strong> If you choose to provide your own LLM provider API key (Google Gemini, OpenAI, or NVIDIA NIM), this key is sent once via <code>POST /credentials</code>. It is instantly encrypted on the server, and only an opaque, secure reference token is stored. The raw key is never returned to the extension and is never stored in plaintext.</li>
-<li><strong>Local Data Storage:</strong> The extension uses Chrome's local storage API to remember your theme configurations, background wallpaper choices, and local session preferences. This data stays entirely on your physical machine.</li>
+<li>provide context-aware explanations and related functionality;</li>
+<li>securely handle AI provider credentials when you choose to use your own provider account;</li>
+<li>remember your local preferences and settings;</li>
+<li>maintain, secure, troubleshoot, and improve the service where necessary; and</li>
+<li>comply with applicable legal and regulatory requirements.</li>
 </ul>
-<h3>2. Encryption and Security Architecture</h3>
-<p>We employ industry-standard cryptographic practices to ensure your data remains safe:</p>
+<p>We do not use your selected text to build a personal profile about you.</p>
+
+<h3>4. AI Providers and Third-Party Services</h3>
+<p>To generate explanations, Arth.Find may transmit selected text and relevant context to an AI provider.</p>
+<p>Depending on how you use the service, this may include providers such as:</p>
 <ul>
-<li><strong>In-Transit Protection:</strong> All communications between the Arth.Find extension client and the backend server are encrypted using Secure Sockets Layer / Transport Layer Security (SSL/TLS) HTTPS protocols.</li>
-<li><strong>At-Rest API Key Encryption:</strong> In Bring Your Own Key (BYOK) mode, credentials are fully encrypted using an isolated server-side <code>CREDENTIAL_ENCRYPTION_KEY</code>. Plaintext keys are never visible to server operators or database logs.</li>
+<li>Google Gemini</li>
+<li>OpenAI</li>
+<li>NVIDIA NIM</li>
 </ul>
-<h3>3. Data Storage, Retainment, and Third-Party API Sharing</h3>
-<ul>
-<li><strong>No Selling or Monetization:</strong> We strictly do not sell, rent, trade, or weaponize user data for marketing, profiling, or credit scoring.</li>
-<li><strong>Third-Party LLM Processing:</strong> To generate definitions, text context is transmitted securely to the LLM provider configured by the user or the application fallback environment (Google Gemini, OpenAI, or NVIDIA NIM). These entities process data in accordance with their respective API privacy terms, which generally prohibit using API data to train models.</li>
-</ul>
-<h3>4. Compliance with India's DPDP Act</h3>
-<p>As an application developed and managed under the framework of Indian laws, we strictly adhere to the <strong>Digital Personal Data Protection (DPDP) Act</strong>:</p>
-<ul>
-<li><strong>Data Minimization:</strong> We only request processing privileges for the exact text you explicitly highlight.</li>
-<li><strong>Explicit Consent:</strong> By installing the extension and highlighting text, you provide clear, affirmative consent for transient processing of that text snippet.</li>
-<li><strong>Right to Erasure &amp; Access (BYOK Data):</strong> Since we do not maintain user accounts or persistent history logs, we hold no personal data profile on you. If you use BYOK mode and wish to revoke or erase your encrypted credential token, you can purge your local extension storage or contact us to invalidate the token reference on the backend.</li>
-<li><strong>Data Principal Grievances:</strong> For queries, complaints, or exercising your rights under the DPDP Act, you can contact our designated Data Principal Grievance support through our official support channel: <span class="todo" style="display:inline;padding:.1rem .5rem;margin:0">arthfind11@gmail.com</span></li>
-</ul>
-<h3>5. Changes to This Policy</h3>
-<p>We reserve the right to update this Privacy Policy to reflect extension updates or legal revisions. Continued use of the extension after updates constitutes acceptance of the modified policy.</p>
+<p>The information sent to an AI provider is subject to that provider's applicable privacy policy, terms of service, and data-handling practices.</p>
+<p>Different providers, products, account types, and service plans may have different data-retention and model-improvement policies. You should review the privacy and data-use terms of the AI provider associated with your account before submitting confidential or sensitive information.</p>
+
+<h3>5. Information We Do Not Sell</h3>
+<p>We do not sell, rent, or trade personal information for advertising or marketing purposes.</p>
+<p>We do not use information processed through Arth.Find to create advertising profiles or credit profiles.</p>
+
+<h3>6. Data Retention</h3>
+<p>Arth.Find is designed to minimize data retention.</p>
+<p>Text submitted for an explanation is processed for the purpose of generating the requested result and is not intended to become part of a permanent user history.</p>
+<p>We do not maintain a personal reading-history profile associated with an Arth.Find account because an account is not currently required.</p>
+<p>Information may nevertheless be retained for a limited period where reasonably necessary to operate, protect, troubleshoot, or legally maintain the service.</p>
+<p>Where you use your own AI provider credentials, encrypted credential information may remain associated with the service until it is removed, invalidated, or otherwise deleted in accordance with our applicable procedures.</p>
+
+<h3>7. Local Storage and Device Data</h3>
+<p>Some Arth.Find preferences are stored locally on your device, such as themes, wallpapers, and interface settings.</p>
+<p>Local settings remain on your device unless you remove them or otherwise clear the relevant browser or extension data.</p>
+
+<h3>8. Security</h3>
+<p>We take reasonable technical and organizational measures to protect information handled by Arth.Find.</p>
+<p>Communications between the extension, our servers, and supported services are protected using encrypted HTTPS connections.</p>
+<p>Where you choose to provide an AI provider credential, we use encryption and appropriate security measures designed to protect that credential from unauthorized access.</p>
+<p>However, no method of transmission or storage can be guaranteed to be completely secure. You should avoid submitting confidential, highly sensitive, or unnecessary personal information when using AI-powered features.</p>
+
+<h3>9. Your Choices and Privacy Rights</h3>
+<p>You may choose whether to use features that require an AI provider credential.</p>
+<p>You may also remove your locally stored Arth.Find preferences and settings through your browser or extension controls.</p>
+<p>Where applicable under the laws governing your use of Arth.Find, you may have rights relating to your personal information, including rights to request access, correction, deletion, or other forms of control over your information.</p>
+<p>For privacy-related requests or complaints, please contact us using the support details provided below.</p>
+
+<h3>10. Children's Privacy</h3>
+<p>Arth.Find is not specifically directed toward children.</p>
+<p>We do not knowingly request personal information from children for the purpose of creating user accounts or profiles.</p>
+<p>If you believe that a child has provided personal information to us and you would like it reviewed or removed, please contact us.</p>
+
+<h3>11. Legal and Regulatory Compliance</h3>
+<p>We aim to handle personal information in accordance with applicable privacy and data-protection requirements.</p>
+<p>For users in India, this includes consideration of the Digital Personal Data Protection Act, 2023 and applicable rules and regulations as they come into force.</p>
+<p>Nothing in this Privacy Policy is intended to limit any privacy rights you may have under applicable law.</p>
+
+<h3>12. Changes to This Privacy Policy</h3>
+<p>We may update this Privacy Policy from time to time to reflect changes to Arth.Find, our services, or applicable legal requirements.</p>
+<p>When we make material changes, we will update the "Last Updated" date at the beginning of this policy.</p>
+<p>We encourage you to review this page periodically to remain informed about how Arth.Find handles information.</p>
+
+<h3>13. Contact Us</h3>
+<p>For privacy questions, requests, or complaints relating to Arth.Find, please contact us at:</p>
+<p><strong>Email:</strong> <a href="mailto:arthfind11@gmail.com">arthfind11@gmail.com</a></p>
+<p>We will make reasonable efforts to review and respond to privacy-related requests in a timely manner.</p>
+
+<p><strong>Arth.Find</strong></p>
+<p>Arth.Find ("अर्थ") refers to "meaning" — reflecting the purpose of the service: helping readers understand meaning in context.</p>
 </article>
 </div>
 

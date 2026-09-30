@@ -6,8 +6,9 @@ var T = [
   ["Dipesh Giri", "images/dipesh-giri.png", "https://www.linkedin.com/in/dipesh-giri-26188b323/"],
   ["Rajuram D", "images/rajuram-d.jpg", "https://www.linkedin.com/in/rajuram14/"],
   ["Hemant Dubey", "images/hemant-dubey.jpg", ""],
+  ["Nilesh", "images/nilesh.jpg", ""],
   ["Harshit Dwivedi", "images/harshit-dwivedi.jpg", "https://www.linkedin.com/in/harshit-dwivedi-aa8804434/"],
-  ["Mahak Jaiswal", "images/mahak-jaiswal.jpg", ""],
+  ["Mahak Jaiswal", "images/mahak-jaiswal.jpeg", "https://www.linkedin.com/in/mahak-jaiswal-200b47439"],
   ["Soniya Limbu", "images/soniya-limbu.png", "https://www.linkedin.com/in/soniya-limbu-854835418/"],
   ["Sahel Sasmal", "images/sahel-sasmal.jpg", "https://www.linkedin.com/in/sahel-sasmal-8706b4332/"],
   ["Sagarika Chatterjee", "images/sagarika-chatterjee.jpg", ""]

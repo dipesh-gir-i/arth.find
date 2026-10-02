@@ -6,23 +6,52 @@ var T = [
   ["Dipesh Giri", "images/dipesh-giri.png", "https://www.linkedin.com/in/dipesh-giri-26188b323/"],
   ["Rajuram D", "images/rajuram-d.jpg", "https://www.linkedin.com/in/rajuram14/"],
   ["Hemant Dubey", "images/hemant-dubey.jpg", "https://www.linkedin.com/in/hemant-dubey-96233b419/"],
-  ["Nilesh", "images/nilesh.jpg", ""],
-  ["Harshit Dwivedi", "images/harshit-dwivedi.jpg", "https://www.linkedin.com/in/harshit-dwivedi-aa8804434/"],
   ["Mahak Jaiswal", "images/mahak-jaiswal.jpeg", "https://www.linkedin.com/in/mahak-jaiswal-200b47439"],
   ["Soniya Limbu", "images/soniya-limbu.png", "https://www.linkedin.com/in/soniya-limbu-854835418/"],
+  ["Harshit Dwivedi", "images/harshit-dwivedi.jpg", "https://www.linkedin.com/in/harshit-dwivedi-aa8804434/"],
   ["Sahel Sasmal", "images/sahel-sasmal.jpg", "https://www.linkedin.com/in/sahel-sasmal-8706b4332/"],
-  ["Sagarika Chatterjee", "images/sagarika-chatterjee.jpg", ""]
+  ["Nilesh", "images/nilesh.jpg", "https://www.linkedin.com/in/nilesh-9683a42b8"],
+  ["Sagarika Chatterjee", "images/sagarika-chatterjee.jpg", "https://www.linkedin.com/in/sagarika-chatterjee-a30b2534b/"]
 ];
-document.getElementById("teamGrid").innerHTML = T.map(function(t) {
-  return '<div class="m">' +
-    '<img class="av" src="' + t[1] + '" alt="' + t[0] + '">' +
-    '<h3>' + t[0] + '</h3>' +
-    '<p class="role">Role: to be added</p>' +
-    (t[2]
-      ? '<a href="' + t[2] + '" target="_blank" rel="noopener">LinkedIn</a>'
-      : '<span class="role">LinkedIn: to be added</span>') +
-    '</div>';
-}).join("");
+/* ── Rotating team grid ──
+   Shifts the displayed order by one position each day so that
+   no single person is always at the top.  A smooth CSS transition
+   animates the shift every 8 seconds while the page is visible. */
+
+var teamRotationOffset = Math.floor(Date.now() / 86400000) % T.length; // daily seed
+var teamCurrentOffset  = teamRotationOffset;
+
+function renderTeam(offset) {
+  var len = T.length;
+  var ordered = [];
+  for (var i = 0; i < len; i++) ordered.push(T[(i + offset) % len]);
+  document.getElementById("teamGrid").innerHTML = ordered.map(function(t) {
+    return '<div class="m">' +
+      '<img class="av" src="' + t[1] + '" alt="' + t[0] + '">' +
+      '<h3>' + t[0] + '</h3>' +
+      '<p class="role">Role: to be added</p>' +
+      (t[2]
+        ? '<a href="' + t[2] + '" target="_blank" rel="noopener">LinkedIn</a>'
+        : '<span class="role">LinkedIn: to be added</span>') +
+      '</div>';
+  }).join("");
+}
+
+renderTeam(teamCurrentOffset);
+
+/* Rotate once every 8 seconds while on the team page */
+setInterval(function() {
+  var teamPage = document.getElementById("team");
+  if (teamPage && teamPage.classList.contains("on")) {
+    teamCurrentOffset = (teamCurrentOffset + 1) % T.length;
+    var grid = document.getElementById("teamGrid");
+    grid.style.opacity = "0";
+    setTimeout(function() {
+      renderTeam(teamCurrentOffset);
+      grid.style.opacity = "1";
+    }, 400);
+  }
+}, 8000);
 if(YOUTUBE_ID){document.getElementById("video").innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+YOUTUBE_ID+'" title="Arth.Find user guide" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>'}
 var R={
     "":"home",

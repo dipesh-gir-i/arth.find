@@ -40,7 +40,7 @@ details p{margin:.7rem 0 0;color:var(--muted)}
 code{font:.9em ui-monospace,Menlo,Consolas,monospace;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:.05em .35em;overflow-wrap:anywhere}
 pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem;overflow-x:auto}pre code{border:0;padding:0}
 .legal h3{margin-top:2rem}.legal li{margin:.4rem 0}
-.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.5rem;margin-top:2rem}
+.team{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.5rem;margin-top:2rem;transition:opacity .4s ease}
 .m{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem;text-align:center}
 .av{width:96px;height:96px;border-radius:50%;margin:0 auto .8rem;display:grid;place-items:center;background:var(--bg);border:1px dashed var(--muted);color:var(--muted);font-size:.75rem}
 .m h3{margin:0 0 .2rem;font-size:1.1rem}.m .role{color:var(--muted);font-size:.9rem;margin:0 auto .6rem}

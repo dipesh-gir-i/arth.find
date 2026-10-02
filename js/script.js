@@ -29,7 +29,6 @@ function renderTeam(offset) {
     return '<div class="m">' +
       '<img class="av" src="' + t[1] + '" alt="' + t[0] + '">' +
       '<h3>' + t[0] + '</h3>' +
-      '<p class="role">Role: to be added</p>' +
       (t[2]
         ? '<a href="' + t[2] + '" target="_blank" rel="noopener">LinkedIn</a>'
         : '<span class="role">LinkedIn: to be added</span>') +

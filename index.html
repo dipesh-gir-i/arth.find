@@ -1,228 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="warm-calm">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Arth.Find – context-aware word meanings for PDF readers</title>
-<link rel="icon" href="images/icon-source.svg" type="image/svg+xml">
-  <link rel="icon" href="images/icon16.png" sizes="16x16" type="image/png">
-  <link rel="icon" href="images/icon32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="images/icon48.png" sizes="48x48" type="image/png">
-  <link rel="icon" href="images/icon128.png" sizes="128x128" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Figtree:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Arth.Find | Understand What You Read</title>
+  <meta name="description" content="Arth.Find is a Chrome extension that explains words, phrases and sentences in the context of what you are reading, on web pages and in PDFs.">
+  <meta name="theme-color" content="#f8f4e8">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Arth.Find">
+  <meta property="og:title" content="Arth.Find | Understand What You Read">
+  <meta property="og:description" content="Context-aware explanations of words and concepts while you browse the web and read PDFs.">
+  <meta property="og:url" content="https://arthfind.tech/">
+  <meta property="og:image" content="https://arthfind.tech/assets/logo.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <script>
+    /* Apply saved theme before first paint to avoid a flash of the wrong theme. */
+    (function () {
+      var ids = ["warm-calm","fresh-calm","soft-natural","warm-friendly","warm-calm-dark","fresh-calm-dark","soft-natural-dark","warm-friendly-dark"];
+      var t = "warm-calm";
+      try { var s = localStorage.getItem("arth-site-theme"); if (ids.indexOf(s) > -1) t = s; } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div class="wrap">
-<a class="brand" href="#/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
-  <title>Arth.Find logo</title>
-  <rect x="0" y="0" width="128" height="128" rx="24" fill="#0a0a0a"/>
-  <svg x="14" y="14" width="100" height="100"
-       viewBox="-20 -20 851.34 566.99" preserveAspectRatio="xMidYMid meet">
-    <g transform="translate(-60.101763,581.986566) scale(0.1,-0.1)" fill="#ffffff" stroke="none">
-      <path d="M2402 5808 c-20 -20 -14 -32 35 -73 26 -22 124 -114 216 -205 93 -91
-176 -168 186 -171 9 -4 459 -7 1000 -8 783 0 986 -3 993 -13 4 -7 8 -992 8
--2188 l1 -2175 173 -177 c96 -97 186 -193 201 -212 15 -20 36 -36 46 -36 18 0
-19 59 21 2398 l3 2397 1465 5 1465 5 80 65 c44 36 139 119 211 185 71 66 148
-135 170 152 82 67 337 62 -3130 63 -2447 0 -3134 -2 -3144 -12z"/>
-      <path d="M3265 4478 c-27 -24 -106 -92 -175 -153 -69 -61 -152 -133 -185 -160
--70 -59 -75 -64 -68 -82 4 -9 30 -13 98 -13 51 0 117 -5 146 -10 30 -6 84 -15
-121 -19 146 -19 354 -129 480 -254 76 -74 187 -239 218 -322 12 -33 27 -69 33
--80 11 -22 32 -134 42 -230 12 -108 -35 -356 -81 -430 -6 -11 -15 -30 -19 -43
--20 -69 -160 -246 -257 -328 -284 -237 -593 -339 -973 -320 -194 9 -399 52
--530 111 -120 55 -144 65 -149 65 -9 0 -188 105 -269 158 -101 66 -142 98
--262 206 -55 50 -110 99 -123 111 -13 11 -54 56 -90 100 -37 44 -77 91 -89
-104 -61 64 -304 404 -365 511 -10 19 -30 53 -43 75 -14 22 -29 51 -35 65 -18
-41 -60 90 -77 90 -12 0 -14 -9 -10 -42 11 -107 68 -320 143 -543 45 -132 165
--371 252 -499 130 -194 384 -474 498 -550 21 -14 66 -45 99 -69 196 -141 442
--256 685 -317 208 -53 218 -54 450 -54 210 0 233 2 345 28 65 15 126 31 135
-35 8 5 33 12 55 16 22 4 59 15 82 26 23 10 46 19 51 19 13 0 225 109 275 141
-93 59 228 169 301 243 149 153 288 363 342 516 9 25 22 61 29 80 32 88 56 184
-71 290 44 307 -52 720 -224 963 -103 146 -269 323 -367 392 -159 111 -257 165
--326 180 -19 4 -46 14 -61 21 -15 8 -49 14 -75 14 -42 0 -54 -6 -98 -42z"/>
-      <path d="M5721 4036 c-10 -11 -15 -77 -19 -229 -4 -191 -3 -214 12 -226 14
--12 168 -14 969 -15 554 -1 960 2 972 8 22 10 82 64 255 231 63 61 142 134
-174 162 48 42 57 55 47 66 -9 12 -194 15 -1204 16 -1065 2 -1195 0 -1206 -13z"/>
-    </g>
-  </svg>
-</svg>Arth.Find</a>
-<nav aria-label="Main">
-<a href="#/">Home</a>
-<a href="#/faq">FAQs</a>
-<a href="#/privacy">Privacy policy</a>
-<a href="#/team">Team</a>
-<a href="#/feedback">Feedback</a>
-</nav></div></header>
-<main>
+  <a class="skip" href="#main">Skip to content</a>
 
-<!-- HOME -->
-<div class="page wrap" id="home">
-<div class="hero">
-<div>
-<h1>The right meaning depends on where you find the word.</h1>
-<p>Arth.Find is an AI-powered Chrome extension for PDF and e-book readers. Highlight a word, phrase or sentence and get its meaning in the context of what you are reading, right on the page, with no new tabs.</p>
-<div class="row"><a href="https://chromewebstore.google.com/detail/chekciphhfcfglnlbaclchafimbabggp?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">
-<span class="btn" role="note">Chrome Web Store</span></a></div>
-</div>
-<div class="demo" aria-label="Example of a contextual lookup">
-<p style="margin:0">You are reading about technology and startups. You highlight <mark>Silicon</mark>.</p>
-<div class="ans"><b>A search engine says</b>Silicon is a chemical element with the symbol Si and atomic number 14, best known as the foundational semiconductor material powering modern electronics. Correct, but not what your book means.</div>
-<div class="ans good"><b>Arth.Find says</b>Silicon refers to the region's name, which is derived from the silicon-based technologies that were developed there.</div>
-</div>
-</div>
-
-<section class="blk" aria-labelledby="f">
-<h2 id="f">What you get</h2>
-<div class="grid">
-<div><h3>Meaning in context</h3><p>Explanations for words, phrases and whole sentences, based on the text around your selection.</p></div>
-<div><h3>Stay on the page</h3><p>Meanings appear right where you are reading. No tab switching, no broken concentration.</p></div>
-<div><h3>Calming themes</h3><p>Reading themes with colours chosen with human psychology in mind, instead of a harsh white or black page.</p></div>
-<div><h3>Nature wallpapers</h3><p>Built-in calming backgrounds such as forests, water and light through leaves.</p></div>
-<div><h3>Your own backgrounds</h3><p>Upload a favourite photo or painting to make the reader feel like yours.</p></div>
-<div><h3>Built-in PDF reader</h3><p>Open a local PDF or a PDF URL in the bundled PDF.js viewer, and select any rendered text to look it up.</p></div>
-<div><h3>Bring your own key</h3><p>Prefer your own Gemini, OpenAI or NVIDIA NIM key? Use it. It is encrypted on the server and never sent back to the extension.</p></div>
-</div>
-</section>
-
-<section class="blk" aria-labelledby="g">
-<h2 id="g">User guide</h2>
-<p>Watch how to open the PDF reader, highlight text and choose your theme and wallpaper.</p>
-<div class="video" id="video"><span>YouTube user guide goes here.<br>Set <code>YOUTUBE_ID</code> in the script at the bottom of this file.</span></div>
-</section>
-</div>
-
-<!-- FAQ -->
-<div class="page wrap" id="faq">
-<h1> Frequently Asked Questions (FAQs)</h1>
-<p>Answers to common questions.</p>
-<details><summary>What is Arth.Find?</summary><p>A browser extension that shows you the meaning of any word, phrase, or sentence you select based on the exact context you're reading it in without leaving the page.</p></details>
-<details><summary>How is this different from a regular dictionary or Google search?</summary><p>A dictionary gives you one generic definition for every use of a word. Arth.Find looks at the sentence (and nearby heading) around your selection and generates a meaning that actually fits what you're reading plus you never leave the page to get it.</p></details>
-<details><summary>Who is it for?</summary><p>Whether you're a student tackling complex papers, a professional conducting research, or a passionate reader saving on expensive textbooks,this is for you. From engineering diagrams and medical journals to classic literature, master any text directly in your browser.</p></details>
-<details><summary>Do I need to sign up?</summary><p>No account is required. You bring your own AI provider API key (e.g. from Gemini or OpenAI) to power the explanations.</p></details>
-<details><summary>Why do I need my own API key?</summary><p>This keeps the extension free to use and puts you in control of your own usage and costs, rather than routing everyone's requests through a shared, rate-limited key.</p></details>
-<details><summary>Is my API key safe?</summary><p>The API key is encrypted before it's stored.</p></details>
-<details><summary>Which AI providers are supported?</summary><p>Gemini, OpenAI and NVIDIA NIM.</p></details>
-<details><summary>There is an API key error when I am trying to use the extension</summary><p>Remove the saved provider key and re-enter it, or refresh the page once.</p></details>
-<details><summary>Can I change how it looks?</summary><p>8 color themes and several background options are available in settings.</p></details>
-</div>
-
-<!-- PRIVACY -->
-<div class="page wrap" id="privacy">
-<article class="legal">
-<h1>Privacy Policy</h1>
-<p><strong>Last Updated:</strong> October 02, 2026</p>
-<p>Arth.Find ("Arth.Find", "we," "our," or "us") respects your privacy and is committed to handling your information responsibly. This Privacy Policy explains what information Arth.Find processes, why it is processed, how it is protected, and the choices available to you when using the Arth.Find Chrome Extension and related services.</p>
-<p>By using Arth.Find, you acknowledge the practices described in this Privacy Policy.</p>
-
-<h3>1. About Arth.Find</h3>
-<p>Arth.Find is a context-aware reading tool that helps users understand words, phrases, and sentences based on the surrounding text in a document. The service is designed around data minimization. We aim to process only the information necessary to provide the requested explanation and to avoid collecting information that is not needed for the service.</p>
-
-<h3>2. Information We Process</h3>
-<h4>Text You Select</h4>
-<p>Selected text and its surrounding context are sent to our server only when you select text and click Explain Arth.Find does not collect your browsing history and does not read or transmit the rest of a page's content.</p>
-
-<h4>Information You Provide for AI Services</h4>
-<p>Arth.Find may allow you to connect your own AI provider account or API key, including supported providers such as Google Gemini, OpenAI, or NVIDIA NIM. If you choose to use this feature, the credentials you provide are transmitted securely and protected using encryption. Arth.Find does not display your original credential back to you after it has been securely stored. You are responsible for maintaining the security of your AI provider account and for complying with that provider's terms and policies.</p>
-
-<h4>Preferences and Settings</h4>
-<p>Arth.Find may store settings such as reading themes, background preferences, and other interface preferences locally on your device.</p>
-<p>These settings are used to provide a more personalized reading experience.</p>
-
-<h4>Account Information</h4>
-<p>Arth.Find does not currently require users to create an account to use the extension.</p>
-
-<h3>3. How We Use Information</h3>
-<p>Information processed by Arth.Find is used to:</p>
-<ul>
-<li>provide context-aware explanations and related functionality;</li>
-<li>securely handle AI provider credentials when you choose to use your own provider account;</li>
-<li>remember your local preferences and settings;</li>
-<li>maintain, secure, troubleshoot, and improve the service where necessary; and</li>
-<li>comply with applicable legal and regulatory requirements.</li>
-</ul>
-<p>We do not use your selected text to build a personal profile about you.</p>
-
-<h3>4. AI Providers and Third-Party Services</h3>
-<p>To generate explanations, Arth.Find may transmit selected text and relevant context to an AI provider.</p>
-<p>Depending on how you use the service, this may include providers such as:</p>
-<ul>
-<li>Google Gemini</li>
-<li>OpenAI</li>
-<li>NVIDIA NIM</li>
-</ul>
-<p>The information sent to an AI provider is subject to that provider's applicable privacy policy, terms of service, and data-handling practices.</p>
-<p>Different providers, products, account types, and service plans may have different data-retention and model-improvement policies. You should review the privacy and data-use terms of the AI provider associated with your account before submitting confidential or sensitive information.</p>
-
-<h3>5. Information We Do Not Sell</h3>
-<p>We do not sell, rent, or trade personal information for advertising or marketing purposes. We do not use information processed through Arth.Find to create advertising profiles or credit profiles.</p>
-<h4>Chrome Web Store User Data Policy</h4>
-<p>The use of information received from Chrome APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements. We use this information only to provide Arth.Find's single purpose: explaining selected text in context. We do not sell it or use it for advertising, and we do not transfer it to third parties.</p>
-
-<h3>6. Data Retention</h3>
-<p>We do not store your selected text or its surrounding context on our servers. Text is stored only if you choose to save it to your library, and saved items are kept on your own device. Our servers keep only standard technical logs (such as request time and status) needed to operate and troubleshoot the service.</p>
-<p>Information may nevertheless be retained for a limited period where reasonably necessary to operate, protect, troubleshoot, or legally maintain the service. Where you use your own AI provider credentials, encrypted credential information may remain associated with the service until it is removed, invalidated, or otherwise deleted in accordance with our applicable procedures.</p>
-
-<h3>7. Local Storage and Device Data</h3>
-<p>Some Arth.Find preferences are stored locally on your device, such as themes, wallpapers, and interface settings. Local settings remain on your device unless you remove them or otherwise clear the relevant browser or extension data.</p>
-
-<h3>8. Security</h3>
-<p>We take reasonable technical and organizational measures to protect information handled by Arth.Find. Communications between the extension, our servers, and supported services are protected using encrypted HTTPS connections.</p>
-<p>Where you choose to provide an AI provider credential, we use encryption and appropriate security measures designed to protect that credential from unauthorized access. However, no method of transmission or storage can be guaranteed to be completely secure. You should avoid submitting confidential, highly sensitive, or unnecessary personal information when using AI-powered features.</p>
-
-<h3>9. Your Choices and Privacy Rights</h3>
-<p>You may choose whether to use features that require an AI provider credential. You may also remove your locally stored Arth.Find preferences and settings through your browser or extension controls.</p>
-<p>Where applicable under the laws governing your use of Arth.Find, you may have rights relating to your personal information, including rights to request access, correction, deletion, or other forms of control over your information. For privacy-related requests or complaints, please contact us using the support details provided below.</p>
-
-<h3>10. Children's Privacy</h3>
-<p>Arth.Find is not specifically directed toward children. We do not knowingly request personal information from children for the purpose of creating user accounts or profiles. If you believe that a child has provided personal information to us and you would like it reviewed or removed, please contact us.</p>
-
-<h3>11. Legal and Regulatory Compliance</h3>
-<p>We aim to handle personal information in accordance with applicable privacy and data-protection requirements. For users in India, this includes consideration of the Digital Personal Data Protection Act, 2023 and applicable rules and regulations as they come into force. Nothing in this Privacy Policy is intended to limit any privacy rights you may have under applicable law.</p>
-
-<h3>12. Changes to This Privacy Policy</h3>
-<p>We may update this Privacy Policy from time to time to reflect changes to Arth.Find, our services, or applicable legal requirements. When we make material changes, we will update the "Last Updated" date at the beginning of this policy. We encourage you to review this page periodically to remain informed about how Arth.Find handles information.</p>
-
-<h3>13. Contact Us</h3>
-<p>For privacy questions, requests, or complaints relating to Arth.Find, please contact us at:</p>
-<p><strong>Email:</strong> <a href="mailto:arthfind11@gmail.com">arthfind11@gmail.com</a></p>
-<p>We will make reasonable efforts to review and respond to privacy-related requests in a timely manner.</p>
-
-<p><strong>Arth.Find</strong></p>
-<p>Arth.Find ("अर्थ") refers to "meaning" reflecting the purpose of the service: helping readers understand meaning in context.</p>
-</article>
-</div>
-
-<!-- TEAM -->
-<div class="page wrap" id="team">
-<h1>Meet the team</h1>
-<p>The people behind Arth.Find.</p>
-<div class="team" id="teamGrid"></div>
-</div>
-
-<!-- FEEDBACK -->
-<div class="page wrap" id="feedback">
-    <h1>Share your feedback</h1>
-    <p>
-        Tell us what you think about Arth.Find, report an issue,
-        or suggest something you'd like us to improve.
-    </p>
-
-    <div class="feedback-form">
-        <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeOCu9X3PdrCOCAlzUUyhaV5zkZV9QSp5YOEuVBY2n2vtTlOQ/viewform?embedded=true"
-            title="Arth.Find Feedback Form"
-            loading="lazy">
-            Loading…
-        </iframe>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="Arth.Find home">
+        <img src="assets/logo.png" width="36" height="36" alt="" class="brand-logo">
+        <span class="brand-name">Arth.Find</span>
+      </a>
+      <div class="actions">
+        <a class="btn btn-ghost btn-feedback" data-link="feedbackForm" target="_blank" rel="noopener noreferrer" title="Alpha test feedback">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.5L3.5 20.5l1.5-4.9A8.5 8.5 0 1 1 21 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Alpha test feedback</span>
+        </a>
+        <a class="btn btn-primary" data-link="chromeStore" target="_blank" rel="noopener noreferrer">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Add to Chrome</span>
+        </a>
+        <div class="theme" id="theme">
+          <button class="theme-btn" id="themeBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="themePanel" aria-label="Choose colour theme" title="Choose colour theme"></button>
+          <div class="theme-panel" id="themePanel" role="group" aria-label="Colour theme" hidden>
+            <p class="theme-title">Theme</p>
+            <div class="theme-grid" id="themeGrid" role="radiogroup" aria-label="Colour theme"></div>
+            <p class="theme-name" id="themeName" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </header>
 
-</main>
-<footer><div class="wrap">
-<span>Arth.Find - Copyright © 2026 All rights reserved.</span>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-ambient" aria-hidden="true">
+        <span class="ambient-orb ambient-orb-a"></span>
+        <span class="ambient-orb ambient-orb-b"></span>
+        <span class="ambient-orb ambient-orb-c"></span>
+        <span class="ambient-orbit ambient-orbit-a"></span>
+        <span class="ambient-orbit ambient-orbit-b"></span>
+        <span class="ambient-grid"></span>
+      </div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>The right meaning depends on where you find the word.</h1>
+          <p class="lead">Arth.Find explains unfamiliar words, phrases and sentences using the text around your selection, while you browse the web and read PDFs.</p>
+          <p class="sub">Highlight text, and the meaning that fits your page appears right there. No new tabs. PDFs open in the built-in reader.</p>
+        </div>
 
-</div></footer>
-<script src="js/script.js" defer></script>
+        <figure class="hero-visual">
+          <div class="frame" role="img" aria-label="Arth.Find explaining a highlighted word on a web page">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="frame-body">
+              <img src="assets/promo.png" width="1280" height="800" alt="Arth.Find explaining a highlighted word on a web page">
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="video" aria-labelledby="video-h">
+      <div class="wrap">
+        <h2 id="video-h">See Arth.Find in Action</h2>
+        <p class="section-sub">A short walkthrough of the extension.</p>
+        <div class="video-frame">
+          <iframe id="ytFrame" title="Arth.Find product video" loading="lazy" width="560" height="315"
+            allow="encrypted-media; picture-in-picture; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="socials">
+        <h2 class="foot-h">Our Socials</h2>
+        <a class="social-link" data-link="instagram" target="_blank" rel="noopener noreferrer" aria-label="Arth.Find on Instagram">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="team.html">Our Team</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a id="contactLink" data-link="mailto">Contact</a>
+      </nav>
+    </div>
+    <div class="wrap copy">© 2026 Arth.Find. All rights reserved.</div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
